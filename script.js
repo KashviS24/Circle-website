@@ -53,10 +53,10 @@ document.getElementById("modeSwitch").addEventListener("click", function() {
     if (body.classList.contains('landing-mode')) {
       body.classList.remove('landing-mode');
       body.classList.add('party-mode');
-      this.textContent = "NYC";
+      this.textContent = "and its circles!";
     } else {
       body.classList.remove('party-mode');
       body.classList.add('landing-mode');
-      this.textContent = "Fun!";
+      this.textContent = "New York";
     }
   });
