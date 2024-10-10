@@ -38,12 +38,12 @@
   /* Landing Page Mode: Color Circles */
   body.landing-mode .circle:nth-child(-n+15) {
     background-color: #ed2c23; /* First 15 circles red */
-    opacity: 0.7; /* 30% opacity */
+    opacity: 0.8; /* 30% opacity */
   }
   
   body.landing-mode .circle:nth-child(n+16) {
     background-color: #8db600; /* Remaining circles green */
-    opacity: 0.7; /* 30% opacity */
+    opacity: 0.8; /* 30% opacity */
   }
   
   /* Party Mode: Colorful circles with 70% opacity */
