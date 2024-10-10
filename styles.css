@@ -105,3 +105,19 @@
   body.party-mode #modeSwitch {
     color: #fffde3; /* Change text color in party mode */
   }
+
+  #funFactsButton {
+    position: absolute;
+    font-family: "New York", serif;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    font-size: 100px; /* Size of the arrow */
+    color: #fffde3; /* Color of the arrow */
+    text-decoration: none; /* Remove underline */
+    z-index: 1000; /* Ensure it is above other elements */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  body.party-mode #funFactsButton {
+    display: block; /* Show the button when in party mode */
+  }
