@@ -21,8 +21,9 @@
   
   .container {
     position: relative;
-    width: 100vw;  /* Full viewport width */
+    width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
+    align-items: start; /* Align circles at the top */
   }
   
   /* Circle Styles */
@@ -31,19 +32,18 @@
     height: 12vw;
     border-radius: 50%;
     position: absolute;
-    transition: transform 2s ease-in-out, background-color 0.5s ease, opacity 0.5s ease;
-    cursor: pointer;
+    transition: background-color 0.5s ease, opacity 0.5s ease, transform 0.5s ease; /* Transition for color and opacity */
   }
   
-  body.landing-mode .circle:nth-child(-n+16) {
-    background-color: #ed2c23; /* Red circles */
-    opacity: 0.9;
+  /* Landing Page Mode: Color Circles */
+  body.landing-mode .circle:nth-child(-n+15) {
+    background-color: #ed2c23; /* First 15 circles red */
+    opacity: 0.7; /* 30% opacity */
   }
   
-  /* Other half of the circles - Green (#8db600) */
-  body.landing-mode .circle:nth-child(n+17) {
-    background-color: #8db600; /* Green circles */
-    opacity: 0.9;
+  body.landing-mode .circle:nth-child(n+16) {
+    background-color: #8db600; /* Remaining circles green */
+    opacity: 0.7; /* 30% opacity */
   }
   
   /* Party Mode: Colorful circles with 70% opacity */
@@ -85,23 +85,23 @@
     background-color: #000000; /* Black background for party mode */
   }
   
+  /* Button for Mode Switch */
   button#modeSwitch {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 0;
-    font-size: 8vw;
+    padding: 0; /* Remove padding */
+    font-size: 90px; /* Set font size to 8vw */
     cursor: pointer;
-    z-index: 999;
-    background-color: transparent;
-    border: none;
-    font-family: "New York", serif;
-    color: #000000;
+    z-index: 999; /* Make sure it's above everything */
+    background-color: transparent; /* No background color */
+    border: none; /* No border */
+    font-family: "New York", serif; /* Use the system serif font "New York" */
+    color: #000000; /* Button text color */
   }
   
   /* Change button color in party mode */
   body.party-mode #modeSwitch {
     color: #fffde3; /* Change text color in party mode */
   }
-  

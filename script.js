@@ -49,14 +49,14 @@ window.addEventListener('resize', () => {
 document.getElementById("modeSwitch").addEventListener("click", function() {
     const body = document.body;
     
-    // landing-mode <-> party-mode
+    // landing-mode -> party-mode
     if (body.classList.contains('landing-mode')) {
       body.classList.remove('landing-mode');
       body.classList.add('party-mode');
-      this.textContent = "Home";
+      this.textContent = "NYC";
     } else {
       body.classList.remove('party-mode');
       body.classList.add('landing-mode');
-      this.textContent = "Go Crazy";
+      this.textContent = "Fun!";
     }
   });
