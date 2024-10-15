@@ -3,8 +3,8 @@ const gameContainer = document.querySelector('.game-container');
 // Define the matchFacts globally
 const matchFacts = [
     "It is illegal to Honk in NYC streets",
-    "Fact 2",
-    "The Famous yellow cabs were not always YELLOW",
+    "Houston Street was supposed to be spelled “Houstoun” and not like the Texas city",
+    "The famous yellow taxi cabs were not always YELLOW",
     "Empire state has its own zip code",
     "The Statue of Liberty arrived in pieces & took 4 months to assemble",
     "The modern toilet paper was invented in NYC",
