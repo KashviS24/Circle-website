@@ -138,9 +138,9 @@ function showPopup(message) {
     popup.style.top = '50%';
     popup.style.left = '50%';
     popup.style.transform = 'translate(-50%, -50%)';
-    popup.style.backgroundColor = 'white';
+    popup.style.backgroundColor = '#8db600';
     popup.style.bordercolor = '2px black';
-    popup.style.color = 'black';
+    popup.style.color = 'white';
     popup.style.padding = '20px';
     popup.style.borderRadius = '10px';
     popup.style.textAlign = 'center';
