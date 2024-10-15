@@ -23,15 +23,15 @@ h1 {
     display: grid;
     grid-template-columns: repeat(5, 150px); 
     grid-template-rows: repeat(4, 150px);
-    gap: 10px;
+    gap: 26px;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
 }
 
 .card {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     background-color: #333;
     border-radius: 50%;
     position: relative;
@@ -59,9 +59,49 @@ h1 {
 }
 
 .back {
-    background-color: #333; /* Card back */
     transform: rotateY(180deg);
+    border-radius: 50%;
+    backface-visibility: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
+.image-card {
+    background-size: cover;
+    background-position: center;
+}
 
-  
+.color-card {
+    background-color: #333;
+    border: 5px solid #fff;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 70px;
+    height: 70px; 
+    background-color: #ed2c23;
+    opacity: 0.8;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer;
+    display: flex; /* Center the icon */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    transition: transform 0.3s ease; /* Transition for smooth scaling */
+}
+
+.back-button:hover {
+    transform: scale(1.2); /* Expand on hover */
+    background-color: #ff4d4d; /* Slightly darker on hover */
+}
+
+/* Optional: Add an icon inside the button */
+.back-button::before {
+    content: '←'; /* Left arrow icon */
+    font-size: 20px; /* Icon size */
+}
+
