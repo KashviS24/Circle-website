@@ -138,12 +138,13 @@ function showPopup(message) {
     popup.style.top = '50%';
     popup.style.left = '50%';
     popup.style.transform = 'translate(-50%, -50%)';
-    popup.style.backgroundColor = '#333';
-    popup.style.border = '2px black';
-    popup.style.color = 'white';
+    popup.style.backgroundColor = 'white';
+    popup.style.bordercolor = '2px black';
+    popup.style.color = 'black';
     popup.style.padding = '20px';
     popup.style.borderRadius = '10px';
     popup.style.textAlign = 'center';
+    popup.style.fontFamily = '"New York", serif';
     popup.style.zIndex = '1000'; // Ensure it appears above other elements
 
     // Add the message content
@@ -156,10 +157,11 @@ function showPopup(message) {
     closeButton.style.padding = '5px 10px';
     closeButton.style.border = 'none';
     closeButton.style.borderRadius = '5px';
-    closeButton.style.backgroundColor = '#ff4d4d';
+    closeButton.style.backgroundColor = '#ed2c23';
     closeButton.style.color = '#fff';
     closeButton.style.cursor = 'pointer';
-
+    closeButton.style.fontFamily = '"New York", serif';
+    
     // Append close button to the popup
     popup.appendChild(closeButton);
 
