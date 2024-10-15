@@ -1,5 +1,19 @@
 const gameContainer = document.querySelector('.game-container');
 
+// Define the matchFacts globally
+const matchFacts = [
+    "It is illegal to Honk in NYC streets",
+    "Fact 2",
+    "The Famous yellow cabs were not always YELLOW",
+    "Empire state has its own zip code",
+    "Fact 5",
+    "The modern toilet paper was invented in NYC",
+    "Publicly flirting in NYC has a $25 fine",
+    "NYC is home to Einstein’s eyeballs",
+    "Until 1978, Pinball was banned in NYC",
+    "Farting in a NYC Church is misdemeanor"
+];
+
 // Only create the grid if we are on the flip game page
 if (gameContainer) {
   // Define 10 unique image URLs (located in the "Assets" folder)
@@ -21,11 +35,13 @@ if (gameContainer) {
     pairedCards.push({
       type: 'image',
       value: images[i],
-      pairColor: colors[i] // Store corresponding color for border
+      pairColor: colors[i],
+      index: i // Add index for tracking the pair
     });
     pairedCards.push({
       type: 'color',
-      value: colors[i]
+      value: colors[i],
+      index: i // Add the same index for its corresponding pair
     });
   }
 
@@ -37,27 +53,27 @@ if (gameContainer) {
     for (let i = 0; i < 20; i++) {
       const card = document.createElement('div');
       card.classList.add('card');
-
+  
       if (shuffledCards[i].type === 'image') {
-        // If it's an image, apply the image and set the border to match its pair
         card.innerHTML = `
           <div class="front"></div>
           <div class="back" style="background-image: url(${shuffledCards[i].value}); 
                                    background-size: cover; 
-                                   border: 5px solid ${shuffledCards[i].pairColor};"></div>
+                                   border: 5px solid ${shuffledCards[i].pairColor};"
+                                   data-index="${shuffledCards[i].index}"></div>
         `;
       } else {
-        // If it's a color card, apply the color
         card.innerHTML = `
           <div class="front"></div>
-          <div class="back" style="background-color: ${shuffledCards[i].value};"></div>
+          <div class="back" style="background-color: ${shuffledCards[i].value};"
+                                   data-index="${shuffledCards[i].index}"></div>
         `;
       }
-
+  
       card.addEventListener('click', flipCard);
       gameContainer.appendChild(card);
     }
-  }
+  }  
 
   createGrid();
 }
@@ -115,12 +131,62 @@ function checkForMatch() {
   }
 }
 
+// Show a popup with the match message
+function showPopup(message) {
+    // Create a popup div
+    const popup = document.createElement('div');
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.backgroundColor = '#333';
+    popup.style.border = '2px black';
+    popup.style.color = 'white';
+    popup.style.padding = '20px';
+    popup.style.borderRadius = '10px';
+    popup.style.textAlign = 'center';
+    popup.style.zIndex = '1000'; // Ensure it appears above other elements
+
+    // Add the message content
+    popup.innerHTML = `<p>${message}</p>`;
+
+    // Create a close button
+    const closeButton = document.createElement('button');
+    closeButton.innerText = 'Close';
+    closeButton.style.marginTop = '10px';
+    closeButton.style.padding = '5px 10px';
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '5px';
+    closeButton.style.backgroundColor = '#ff4d4d';
+    closeButton.style.color = '#fff';
+    closeButton.style.cursor = 'pointer';
+
+    // Append close button to the popup
+    popup.appendChild(closeButton);
+
+    // Close button event listener
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(popup);
+    });
+
+    // Append the popup to the body
+    document.body.appendChild(popup);
+}
+
 // Disable matched cards
 function disableCards() {
-  firstCard.removeEventListener('click', flipCard);
-  secondCard.removeEventListener('click', flipCard);
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
 
-  resetBoard();
+    // Get the index of the matched pair
+    const matchedIndex = firstCard.querySelector('.back').style.backgroundImage
+        ? firstCard.querySelector('.back').dataset.index
+        : secondCard.querySelector('.back').dataset.index;
+
+    // Display the corresponding message for the matched pair
+    showPopup(matchFacts[matchedIndex]);
+
+    resetBoard();
 }
 
 // Unflip cards if no match
