@@ -6,24 +6,23 @@ const matchFacts = [
     "Fact 2",
     "The Famous yellow cabs were not always YELLOW",
     "Empire state has its own zip code",
-    "Fact 5",
+    "The Statue of Liberty arrived in pieces & took 4 months to assemble",
     "The modern toilet paper was invented in NYC",
     "Publicly flirting in NYC has a $25 fine",
     "NYC is home to Einstein’s eyeballs",
     "Until 1978, Pinball was banned in NYC",
-    "Farting in a NYC Church is misdemeanor"
+    "Farting in an NYC Church is a misdemeanor"
 ];
 
 // Only create the grid if we are on the flip game page
 if (gameContainer) {
-  // Define 10 unique image URLs (located in the "Assets" folder)
+  
   const images = [
     'Assets/image1.jpg', 'Assets/image2.jpg', 'Assets/image3.jpg', 'Assets/image4.jpg',
     'Assets/image5.jpg', 'Assets/image6.jpg', 'Assets/image7.jpg', 'Assets/image8.jpg',
     'Assets/image9.jpg', 'Assets/image10.jpg'
   ];
 
-  // Define 10 unique colors for plain cards
   const colors = [
     '#8A9A5B', '#FF5733', '#33FF57', '#96DED1', '#3357FF', '#8B0000',
     '#FF33A5', '#F88379', '#A533FF', '#D8BFD8'
