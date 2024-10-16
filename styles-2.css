@@ -101,7 +101,7 @@ h1 {
 
 /* Optional: Add an icon inside the button */
 .back-button::before {
-    content: '←'; /* Left arrow icon */
+    content: '<'; /* Left arrow icon */
     font-size: 20px; /* Icon size */
 }
 

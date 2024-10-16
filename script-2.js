@@ -174,6 +174,12 @@ function showPopup(message) {
     document.body.appendChild(popup);
 }
 
+// Reset board state
+function resetBoard() {
+    [firstCard, secondCard] = [null, null];
+    lockBoard = false;
+  }
+
 // Disable matched cards
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
@@ -197,12 +203,6 @@ function unflipCards() {
     secondCard.classList.remove('flip');
     resetBoard();
   }, 1000);
-}
-
-// Reset board state
-function resetBoard() {
-  [firstCard, secondCard] = [null, null];
-  lockBoard = false;
 }
 
 
