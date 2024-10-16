@@ -106,18 +106,35 @@
     color: #fffde3; /* Change text color in party mode */
   }
 
-  #funFactsButton {
+  .funFactsButton {
     position: absolute;
-    font-family: "New York", serif;
-    top: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
-    font-size: 100px; /* Size of the arrow */
-    color: #fffde3; /* Color of the arrow */
-    text-decoration: none; /* Remove underline */
-    z-index: 1000; /* Ensure it is above other elements */
-    transition: color 0.3s ease; /* Smooth color transition on hover */
+    top: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px; 
+    background-color: #ed2c23;
+    opacity: 0.8;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer;
+    display: flex; /* Center the icon */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    transition: transform 0.3s ease; /* Transition for smooth scaling */ 
   }
+
+  .funFactsButton:hover {
+    transform: scale(1.2); /* Expand on hover */
+    background-color: #ff4d4d; /* Slightly darker on hover */
+}
+
+/* Optional: Add an icon inside the button */
+.funFactsButton::before {
+    content: '→'; /* Left arrow icon */
+    font-size: 20px; /* Icon size */
+}
   
-  body.party-mode #funFactsButton {
+  body.party-mode.funFactsButton {
     display: block; /* Show the button when in party mode */
   }
