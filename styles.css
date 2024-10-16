@@ -21,9 +21,9 @@
   
   .container {
     position: relative;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    align-items: start; /* Align circles at the top */
+    width: 100vw; 
+    height: 100vh; 
+    align-items: start; 
   }
   
   /* Circle Styles */
@@ -92,7 +92,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 0; /* Remove padding */
-    font-size: 90px; /* Set font size to 8vw */
+    font-size: 150px; /* Set font size to 8vw */
     cursor: pointer;
     z-index: 999; /* Make sure it's above everything */
     background-color: transparent; /* No background color */
